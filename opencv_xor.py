@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 ann = cv2.ml.ANN_MLP_create()
-ann.setLayerSizes(np.array([2, 8, 1], dtype=np.uint8))
+ann.setLayerSizes(np.array([2, 5, 1], dtype=np.uint8))
 ann.setTrainMethod(cv2.ml.ANN_MLP_BACKPROP, 0.1)
 ann.setActivationFunction(cv2.ml.ANN_MLP_SIGMOID_SYM)
 ann.setTermCriteria((cv2.TERM_CRITERIA_COUNT | cv2.TERM_CRITERIA_EPS, 1, 0.000001 ))
@@ -23,7 +23,7 @@ td3 = cv2.ml.TrainData_create(input_array3, cv2.ml.ROW_SAMPLE, output_array3)
 
 ann.train(td0, cv2.ml.ANN_MLP_NO_INPUT_SCALE | cv2.ml.ANN_MLP_NO_OUTPUT_SCALE)
 
-for i in range(0, 100000):
+for i in range(0, 10000):
     ann.train(td0, cv2.ml.ANN_MLP_UPDATE_WEIGHTS | cv2.ml.ANN_MLP_NO_INPUT_SCALE | cv2.ml.ANN_MLP_NO_OUTPUT_SCALE)
     ann.train(td1, cv2.ml.ANN_MLP_UPDATE_WEIGHTS | cv2.ml.ANN_MLP_NO_INPUT_SCALE | cv2.ml.ANN_MLP_NO_OUTPUT_SCALE)
     ann.train(td2, cv2.ml.ANN_MLP_UPDATE_WEIGHTS | cv2.ml.ANN_MLP_NO_INPUT_SCALE | cv2.ml.ANN_MLP_NO_OUTPUT_SCALE)
