@@ -11,13 +11,13 @@ input_array0 = np.array([[0.0, 0.0]], dtype=np.float32)
 output_array0 = np.array([[0.0, 1.0]], dtype=np.float32)
 
 input_array1 = np.array([[1.0, 0.0]], dtype=np.float32)
-output_array1 = np.array([[0.0, 1.0]], dtype=np.float32)
+output_array1 = np.array([[1.0, 0.0]], dtype=np.float32)
 
 input_array2 = np.array([[0.0, 1.0]], dtype=np.float32)
-output_array2 = np.array([[0.0, 1.0]], dtype=np.float32)
+output_array2 = np.array([[1.0, 0.0]], dtype=np.float32)
 
 input_array3 = np.array([[1.0, 1.0]], dtype=np.float32)
-output_array3 = np.array([[1.0, 0.0]], dtype=np.float32)
+output_array3 = np.array([[0.0, 1.0]], dtype=np.float32)
 
 td0 = cv2.ml.TrainData_create(input_array0, cv2.ml.ROW_SAMPLE, output_array0)
 td1 = cv2.ml.TrainData_create(input_array1, cv2.ml.ROW_SAMPLE, output_array1)
