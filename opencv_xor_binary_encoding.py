@@ -10,13 +10,13 @@ ann.setTermCriteria((cv2.TERM_CRITERIA_COUNT | cv2.TERM_CRITERIA_EPS, 1, 0.00000
 input_array = np.array([ [0.0, 0.0],
                          [1.0, 0.0],
                          [0.0, 1.0],
-                         [1.0, 1.0],
+                         [1.0, 1.0]
                          ], dtype=np.float32)
                         
 output_array = np.array([ [0.0],
                           [1.0],
                           [1.0],
-                          [0.0],
+                          [0.0]
                           ], dtype=np.float32)
 
 td = cv2.ml.TrainData_create(input_array, cv2.ml.ROW_SAMPLE, output_array)
